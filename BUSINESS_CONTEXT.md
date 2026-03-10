@@ -10,14 +10,14 @@
 ## 2. Flujos Críticos del Negocio
 
 - **Principales Flujos de Trabajo:**
-  - **Crear cuenta:** Una persona nueva completa un formulario con su nombre, correo, contraseña y perfil (administrador o empleado). Al finalizar correctamente, el sistema lo lleva a la pantalla de ingreso.
+  - **Crear cuenta:** El formulario de registro es públicamente visible, pero internamente exclusivo para empleados. Un empleado completa un formulario con nombre, correo y contraseña del nuevo empleado; el sistema valida que el registrador sea un empleado autorizado. El perfil se asigna automáticamente. Al finalizar, si la validación es exitosa, el sistema confirma que la cuenta fue creada.
   - **Ingresar al sistema:** Un usuario registrado escribe su correo y contraseña. Si los datos son correctos, el sistema lo lleva al panel principal.
   - **Salir del sistema:** Desde el menú superior, el usuario puede cerrar su sesión en cualquier momento. El sistema lo regresa a la pantalla de ingreso.
   - **Restricción de acceso:** Si alguien intenta ingresar directamente al panel principal o al módulo de turnos sin haber iniciado sesión, el sistema lo redirige automáticamente a la pantalla de ingreso.
   - **Solicitud de turnos:** Los usuarios con sesión activa pueden registrar nuevas solicitudes de turno, las cuales el sistema recibe y procesa de forma ordenada.
 
 - **Módulos o Funcionalidades Críticas:**
-  - Gestión de acceso: creación de cuenta, inicio de sesión, cierre de sesión y recuperación de sesión activa.
+  - Gestión de acceso: creación de cuentas de empleados, inicio de sesión, cierre de sesión y recuperación de sesión activa.
   - Control de áreas restringidas: protección automática de las secciones internas para que solo el personal autorizado pueda acceder.
   - Menú de navegación condicional: el menú principal solo aparece cuando el usuario ha iniciado sesión.
   - Gestión de turnos: solicitud y visualización de turnos con actualización inmediata en pantalla.
@@ -28,7 +28,7 @@
 
 - **Reglas de Negocio Relevantes:**
   - El panel principal y el módulo de registro de turnos son exclusivos para personal autorizado (administradores y empleados) que hayan iniciado sesión. Cualquier intento de acceso sin sesión redirige a la pantalla de ingreso.
-  - La pantalla de turnos públicos, la creación de cuenta y el inicio de sesión son accesibles para cualquier persona sin necesidad de registrarse.
+  - El formulario de creación de cuentas de empleados es públicamente visible pero internamente exclusivo para empleados autenticados. El sistema valida que el registrador sea un empleado mediante el dominio del correo o lista de autorizados; intentos de no-empleados son rechazados.
   - El menú de navegación superior solo aparece para usuarios con sesión activa; en las pantallas públicas no se muestra.
   - Las credenciales de acceso se protegen mediante mecanismos seguros de almacenamiento; las contraseñas nunca quedan visibles ni almacenadas más allá del momento del ingreso.
   - Toda la información ingresada en los formularios se valida y limpia antes de ser procesada, para proteger el sistema de intentos maliciosos.
@@ -44,12 +44,12 @@
 ## 4. Perfiles de Usuario y Roles
 
 - **Perfiles o Roles de Usuario en el Sistema:**
-  - **Administrador:** Personal con responsabilidades de gestión. Puede ingresar al panel principal y al módulo de turnos, ver el estado de la operación y administrar las solicitudes.
+  - **Administrador:** Personal con responsabilidades de gestión. Puede ingresar al panel principal y al módulo de turnos para ver el estado de la operación y administrar solicitudes.
   - **Empleado:** Personal operativo de la EPS. Puede ingresar al panel principal y al módulo de turnos para solicitar y consultar turnos.
-  - **Visitante (sin sesión):** Cualquier persona que accede al sitio sin haber iniciado sesión. Solo puede ver la pantalla pública de turnos o crear una cuenta nueva.
+  - **Visitante (sin sesión):** Cualquier persona que accede al sitio sin haber iniciado sesión. Solo puede ver la pantalla pública de turnos e inicio de sesión; no puede crear cuentas.
 
 - **Permisos y Limitaciones de Cada Perfil:**
-  - En esta versión, el administrador y el empleado tienen acceso a las mismas secciones del sistema; la distinción de roles queda registrada para aplicar restricciones más detalladas en versiones futuras.
+  - En esta versión, los empleados autorizados pueden crear cuentas de empleados a través del formulario de registro.
   - Ningún usuario, independientemente de su perfil, puede acceder a las secciones internas si no tiene una sesión válida activa.
   - El visitante no puede registrar ni consultar turnos desde el módulo interno; solo puede hacerlo una vez que haya iniciado sesión.
 
