@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions name="CalculadoraService"
+   targetNamespace="http://www.ejemplo.com/calculadora.wsdl"
+   xmlns="http://schemas.xmlsoap.org/wsdl/"
+   xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+   xmlns:tns="http://www.ejemplo.com/calculadora.wsdl"
+   xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+
+   <message name="SumarRequest">
+      <part name="a" type="xsd:int"/>
+      <part name="b" type="xsd:int"/>
+   </message>
+
+   <message name="SumarResponse">
+      <part name="resultado" type="xsd:int"/>
+   </message>
+
+   <portType name="CalculadoraPortType">
+      <operation name="Sumar">
+         <input message="tns:SumarRequest"/>
+         <output message="tns:SumarResponse"/>
+      </operation>
+   </portType>
+
+   <binding name="CalculadoraBinding" type="tns:CalculadoraPortType">
+      <soap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/>
+      <operation name="Sumar">
+         <soap:operation soapAction="SumarAction"/>
+         <input><soap:body use="literal"/></input>
+         <output><soap:body use="literal"/></output>
+      </operation>
+   </binding>
+</definitions>
