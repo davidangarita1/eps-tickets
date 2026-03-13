@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<soapenv:Envelope 
+    xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:tns="http://www.ejemplo.com/calculadora.wsdl">
+   
+   <soapenv:Body>
+      <soapenv:Fault>
+         
+         <faultcode>soapenv:Client</faultcode>
+         
+         <faultstring>Error de validación de datos</faultstring>
+         
+         <detail>
+            <tns:ErrorDetails>
+               <tns:CodigoError>SUM-001</tns:CodigoError>
+               <tns:Mensaje>El valor del parámetro 'b' excede el límite permitido para enteros.</tns:Mensaje>
+            </tns:ErrorDetails>
+         </detail>
+
+      </soapenv:Fault>
+   </soapenv:Body>
+   
+</soapenv:Envelope>

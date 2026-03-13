@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<soapenv:Envelope 
+    xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:tns="http://www.ejemplo.com/calculadora.wsdl">
+   
+   <soapenv:Header/>
+   
+   <soapenv:Body>
+      <tns:Sumar>
+         <a>50</a>
+         <b>25</b>
+      </tns:Sumar>
+   </soapenv:Body>
+   
+</soapenv:Envelope>
