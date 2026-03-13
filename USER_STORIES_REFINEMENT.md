@@ -1,6 +1,6 @@
 # Refinamiento de Historias de Usuario — Sistema de Turnos EPS
 
-## HU-002: Inicio de sesión seguro para empleados y administradores
+## HU-02: Inicio de sesión seguro para empleados y administradores
 
 **Descripción:**  
 Como **empleado o administrador autorizado**, quiero iniciar sesión en la plataforma utilizando mi correo electrónico y contraseña, para acceder al panel principal (dashboard) y a las secciones internas que me permitan gestionar y consultar turnos de atención en la EPS.
