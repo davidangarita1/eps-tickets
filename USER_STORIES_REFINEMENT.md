@@ -5,8 +5,6 @@
 **Descripción:**  
 Como **empleado o administrador autorizado**, quiero iniciar sesión en la plataforma utilizando mi correo electrónico y contraseña, para acceder al panel principal (dashboard) y a las secciones internas que me permitan gestionar y consultar turnos de atención en la EPS.
 
----
-
 **Criterios de aceptación:**
 
 1. El usuario debe ingresar un correo electrónico válido y una contraseña en el formulario de inicio de sesión.
@@ -58,6 +56,8 @@ Como usuario autenticado, quiero que al recargar la página, cerrar y volver a a
    - el sistema debe implementar medidas de seguridad para evitar el acceso no autorizado,
    - como la validación de la identidad del usuario y la protección de los datos sensibles.
 
+---
+
 ## HU-05: Cierre de sesión seguro desde el menú de navegación
 
 **Descripción:**
@@ -74,6 +74,7 @@ Como **usuario autenticado**, quiero poder cerrar mi sesión desde el menú de n
 7. El evento de cierre de sesión debe ser registrado para fines de auditoría y trazabilidad.
 8. El cierre de sesión debe cumplir con los mecanismos de seguridad establecidos en el proyecto, asegurando la transmisión cifrada y la correcta invalidación de tokens.
 
+---
 
 ## Tabla de Comparación entre Historias de Usuario Originales y Refinadas
 
