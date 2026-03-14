@@ -162,16 +162,11 @@ Y protege la información sensible durante el proceso de autenticación
 
 | ID | Caso de Prueba generado por la instrucción | Ajuste del realizado por el probador | ¿Por qué se ajustó? |
 | :--- | :--- | :--- | :--- |
-| TC-01-HU-04 | [Restauración de sesión al recargar la página](#tc-01-hu-04) | | |
-| TC-02-HU-04 | [Restauración de sesión al cerrar y reabrir el navegador](#tc-02-hu-04) | | |
-| TC-03-HU-04 | [Restauración de sesión al reiniciar el dispositivo](#tc-03-hu-04) | | |
-| TC-04-HU-04 | [Redirección al inicio de sesión cuando la sesión ha expirado](#tc-04-hu-04) | | |
-| TC-05-HU-04 | [Uso de cookies o tokens para restaurar la sesión](#tc-05-hu-04) | | |
-| TC-06-HU-04 | [Mensaje de confirmación al restaurar la sesión](#tc-06-hu-04) | | |
-| TC-07-HU-04 | [Validación de identidad del usuario al restaurar la sesión](#tc-07-hu-04) | | |
-| TC-08-HU-04 | [Protección de datos sensibles durante la restauración de sesión](#tc-08-hu-04) | | |
-| TC-09-HU-04 | [Sesión no restaurada si los tokens son inválidos](#tc-09-hu-04) | | |
-| TC-10-HU-04 | [Sesión no restaurada si el navegador bloquea cookies](#tc-10-hu-04) | | |
+| TC-02-HU-04 | [Restauración de sesión al cerrar y reabrir el navegador](#tc-02-hu-04) | Dado que soy un usuario autenticado Y mi sesión no ha expirado (dentro de las 24 horas desde la última actividad) Cuando cierro y vuelvo a abrir el navegador Entonces mi sesión debe restaurarse automáticamente Y puedo acceder al panel principal sin necesidad de iniciar sesión nuevamente | Se quitó lo de redirigir a la última página visitada porque eso no está definido en la HU ni en el contexto de negocio. |
+| TC-03-HU-04 | [Restauración de sesión al reiniciar el dispositivo](#tc-03-hu-04) | Dado que soy un usuario autenticado Y mi sesión no ha expirado (dentro de las 24 horas desde la última actividad) Cuando reinicio el dispositivo y vuelvo a abrir el navegador Entonces mi sesión debe restaurarse automáticamente Y puedo acceder al panel principal sin necesidad de iniciar sesión nuevamente | Igual que TC-02: se quitó lo de redirigir a la última sección porque no es un requisito del sistema. |
+| TC-04-HU-04 | [Redirección al inicio de sesión cuando la sesión ha expirado](#tc-04-hu-04) | Dado que mi sesión ha expirado (más de 24 horas desde la última actividad) Cuando intento acceder al sistema recargando la página, reabriendo el navegador o accediendo directamente a una URL protegida Entonces soy redirigido a la pantalla de inicio de sesión Y no se muestra contenido restringido antes de la redirección Y no puedo acceder a ninguna sección protegida | El caso original no especificaba cómo acceder, así que se agregaron los tres escenarios concretos que corresponden a los criterios de aceptación de la HU. |
+| TC-06-HU-04 | [Mensaje de confirmación al restaurar la sesión](#tc-06-hu-04) | Dado que soy un usuario autenticado Y mi sesión no ha expirado Cuando accedo al sistema después de recargar la página, cerrar y reabrir el navegador, o reiniciar el dispositivo Entonces el sistema muestra un indicador de carga mientras verifica la sesión Y una vez verificada, permite continuar usando el sistema sin interrupciones Y no muestra contenido restringido durante la verificación | El caso original esperaba un mensaje de confirmación, pero lo que el sistema muestra es un indicador de carga silencioso, no un aviso explícito. |
+| TC-07-HU-04 | [Validación de identidad del usuario al restaurar la sesión](#tc-07-hu-04) | Dado que la sesión se restaura automáticamente Cuando el sistema verifica los datos de sesión almacenados Entonces valida que los datos corresponden al usuario original Y si los datos son válidos, restaura la sesión sin solicitar credenciales Y si los datos son inválidos o fueron manipulados, redirige al usuario a la pantalla de inicio de sesión Y no permite acceso a contenido protegido con datos de sesión inválidos | El resultado original era muy abstracto. Se separaron los dos caminos posibles con lo que debe pasar en cada uno. |
 
 ### TC-01-HU-04: 
 Restauración de sesión al recargar la página (Generado por la instrucción)
