@@ -4,9 +4,9 @@
 
 | HU original | HU refinada por la instrucción | Diferencias detectadas |
 | :--- | :--- | :--- |
-| [HU-02 Original](#hu-02-inicio-de-sesión-original) | [HU-02 Refinada](#hu-02-inicio-de-sesión-seguro-para-empleados-y-administradores-refinada) | La instrucción ajustó quién puede iniciar sesión (solo Administrador o Empleado), aclaró las áreas a las que se accede y añadió qué pasa si alguien intenta entrar sin haber iniciado sesión. |
-| [HU-04 Original](#hu-04-restauración-de-sesión-original) | [HU-04 Refinada](#hu-04-restauración-automática-de-sesión-refinada) | La instrucción especificó el tiempo de validez de la sesión y los escenarios en los que se restaura automáticamente. |
-| [HU-05 Original](#hu-05-cierre-de-sesión-original) | [HU-05 Refinada](#hu-05-cierre-de-sesión-seguro-desde-el-menú-de-navegación-refinada) | La instrucción aclaró que el cierre de sesión es inmediato, especificó que el sistema elimina el acceso del usuario al hacerlo. |
+| [HU-02 Original](#hu-02-inicio-de-sesión-original) | [HU-02 Refinada](#hu-02-inicio-de-sesión-seguro-para-empleados-y-administradores-refinada) | La instrucción ajustó quién puede iniciar sesión (solo Administrador o Empleado), aclaró las áreas a las que se accede y añadió qué pasa si alguien intenta entrar sin haber iniciado sesión y añadió mejores prácticas de seguridad y criterios de aceptación. |
+| [HU-04 Original](#hu-04-restauración-de-sesión-original) | [HU-04 Refinada](#hu-04-restauración-automática-de-sesión-refinada) | La instrucción especificó el tiempo de validez de la sesión, los escenarios en los que se restaura automáticamente y añadió mejores criterios de aceptación. |
+| [HU-05 Original](#hu-05-cierre-de-sesión-original) | [HU-05 Refinada](#hu-05-cierre-de-sesión-seguro-desde-el-menú-de-navegación-refinada) | La instrucción aclaró que el cierre de sesión es inmediato, especificó que el sistema elimina el acceso del usuario al hacerlo y añadió criterios de aceptación mejorados. |
 
 ---
 
