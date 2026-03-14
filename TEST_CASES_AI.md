@@ -271,16 +271,10 @@ Y el sistema debe mostrar un mensaje indicando que las cookies están bloqueadas
 
 | ID | Caso de Prueba generado por la instrucción | Ajuste del realizado por el probador | ¿Por qué se ajustó? |
 | :--- | :--- | :--- | :--- |
-| TC-01-HU-05 | [Cerrar sesión correctamente desde el menú de navegación](#tc-01-hu-05) | | |
-| TC-02-HU-05 | [Intento de acceso a secciones internas después de cerrar sesión](#tc-02-hu-05) | | |
-| TC-03-HU-05 | [Mensaje de error controlado al fallar el cierre de sesión](#tc-03-hu-05) | | |
-| TC-04-HU-05 | [Eliminación de datos de sesión en el navegador al cerrar sesión](#tc-04-hu-05) | | |
-| TC-05-HU-05 | [Redirección al inicio de sesión tras cerrar sesión](#tc-05-hu-05) | | |
-| TC-06-HU-05 | [Actualización del menú de navegación tras cerrar sesión](#tc-06-hu-05) | | |
-| TC-07-HU-05 | [Transmisión cifrada al cerrar sesión](#tc-07-hu-05) | | |
-| TC-08-HU-05 | [Registro del evento de cierre de sesión para auditoría](#tc-08-hu-05) | | |
-| TC-09-HU-05 | [Comportamiento en alta concurrencia al cerrar sesión](#tc-09-hu-05) | | |
-| TC-10-HU-05 | [Indicador de carga al procesar el cierre de sesión](#tc-10-hu-05) | | |
+| TC-01-HU-05 | [Cerrar sesión correctamente desde el menú de navegación](#tc-01-hu-05) | Dado que el usuario tiene una sesión activa Y está en una sección interna del sistema Cuando selecciona la opción "Cerrar sesión" en el menú de navegación Entonces el sistema invalida la sesión activa Y el usuario es redirigido automáticamente a la pantalla de inicio de sesión Y el menú de navegación deja de mostrar opciones de usuarios autenticados Y la información de la sesión se elimina del navegador | Se quitó la auditoría porque no es algo verificable desde la pantalla, eso se valida en el servidor. |
+| TC-03-HU-05 | [Mensaje de error controlado al fallar el cierre de sesión](#tc-03-hu-05) | Dado que el usuario tiene una sesión activa Y el sistema no está respondiendo correctamente Cuando el usuario selecciona la opción "Cerrar sesión" en el menú de navegación Entonces se muestra un mensaje de error entendible sin mostrar información interna del sistema Y se ofrece al usuario la opción de reintentar Y el usuario no queda en un estado donde no pueda interactuar con el sistema | Se aclaró qué tipo de fallo se prueba y se añadió que el usuario no debe quedar bloqueado en la pantalla. |
+| TC-07-HU-05 | [Transmisión cifrada al cerrar sesión](#tc-07-hu-05) | Dado que el usuario tiene una sesión activa Cuando selecciona la opción "Cerrar sesión" en el menú de navegación Entonces la dirección de la página muestra el candado de conexión segura durante el proceso Y no se expone información de la sesión ni datos sensibles visibles en la barra de dirección | El resultado original no era verificable. Se cambió por algo que cualquier persona puede comprobar: el candado en la barra de dirección. |
+| TC-09-HU-05 | [Comportamiento en alta concurrencia al cerrar sesión](#tc-09-hu-05) | Dado que el usuario tiene una sesión activa Y el sistema está experimentando alta carga de solicitudes simultáneas Cuando el usuario selecciona "Cerrar sesión" Entonces el cierre de sesión se procesa correctamente, aunque el tiempo de respuesta pueda ser mayor Y el usuario es redirigido a la pantalla de inicio de sesión Y si la respuesta tarda más de lo habitual, se muestra un indicador de carga | El caso original estaba enfocado en múltiples usuarios, que es un test de rendimiento. Se reorientó a lo que un probador puede verificar: cómo se comporta el cierre de sesión cuando el sistema está lento. |
 
 ### TC-01-HU-05: 
 Cerrar sesión correctamente desde el menú de navegación (Generado por la instrucción)
